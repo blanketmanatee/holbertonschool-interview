@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
         ''' While we have keys...'''
         node = stack.pop()
         '''  get the next key 'node' '''
-        for nei in boxes[node]:
+        for key in boxes[node]:
             ''' For every key in box # 'node'...'''
             if not seen[key]:
                 '''  ... that hasn't been used yet'''

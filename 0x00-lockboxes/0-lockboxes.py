@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-    
+    """ can all boxes be unlocked """
     def canUnlockAll(boxes)
+        """ create a list of keys """
         seen = [False] * len(boxes)
         seen[0] = True
         stack = [0]
-        #At the beginning, we have a todo list "stack" of keys to use.
-        #'seen' represents at some point we have entered this box.
         while stack:  #While we have keys...
             node = stack.pop() # get the next key 'node'
             for nei in boxes[node]: # For every key in box # 'node'...

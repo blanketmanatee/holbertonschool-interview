@@ -13,11 +13,11 @@ def canUnlockAll(boxes):
         '''  get the next key 'node' '''
         for nei in boxes[node]:
             ''' For every key in box # 'node'...'''
-            if not seen[nei]:
+            if not seen[key]:
                 '''  ... that hasn't been used yet'''
-                seen[nei] = True
+                seen[key] = True
                 '''  mark that we've opened the box'''
-                stack.append(nei)
+                stack.append(key)
                 '''add the key to the todo list'''
     return all(seen)
     ''' Return true if we've visited every box'''

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-    """ can all boxes be unlocked """
+    ''' can all boxes be unlocked '''
     def canUnlockAll(boxes)
-        """ create a list of keys """
+        ''' create a list of keys '''
         seen = [False] * len(boxes)
         seen[0] = True
         stack = [0]

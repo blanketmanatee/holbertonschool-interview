@@ -7,7 +7,8 @@
  * Return: Ptr to new node or NULL if fail
  */
 
-binary_tree_t *binary_tree_node(binary_tree_t *parent, int value) {
+binary_tree_t *binary_tree_node(binary_tree_t *parent, int value) 
+{
     heap_t *node;
 
     node = malloc(sizeof(heap_t));

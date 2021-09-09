@@ -6,7 +6,7 @@
  * Return: 0 if no cycle, or 1
  */
 
-int cyeck_cycle(listint_t *list)
+int check_cycle(listint_t *list)
 {
     listint_t *first, *second;
 

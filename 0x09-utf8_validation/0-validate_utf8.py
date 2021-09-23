@@ -2,7 +2,7 @@
 
 
 """
-Write a method that determines if a given data set 
+Write a method that determines if a given data set
 represents a valid UTF-8 encoding.
 """
 
@@ -31,4 +31,3 @@ def validUTF8(data):
             n_bytes -= 1
 
             return n_bytes == 0
-            

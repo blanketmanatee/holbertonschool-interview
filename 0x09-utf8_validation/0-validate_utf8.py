@@ -19,7 +19,7 @@ def validUTF8(data):
 
         if n_bytes == 0:
             for bit in bin_rep:
-                if bit == '0': 
+                if bit == '0':
                     break
                 n_bytes += 1
             if n_bytes == 1 or n_bytes > 4:

@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+
+
 """
-Write a method that determines if a given data set represents a valid UTF-8 encoding.
+Write a method that determines if a given data set 
+represents a valid UTF-8 encoding.
 """
+
 
 def validUTF8(data):
     """
@@ -15,7 +19,8 @@ def validUTF8(data):
 
         if n_bytes == 0:
             for bit in bin_rep:
-                if bit == '0' : break
+                if bit == '0': 
+                    break
                 n_bytes += 1
             if n_bytes == 1 or n_bytes > 4:
                 return False
@@ -26,3 +31,4 @@ def validUTF8(data):
             n_bytes -= 1
 
             return n_bytes == 0
+            

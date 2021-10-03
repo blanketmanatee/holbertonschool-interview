@@ -7,8 +7,8 @@ if __name__ == "__main__":
     import signal
 
     c = fileSize = 0
-    statCount = {"200": 0, "301": 0, "400": 0, "401": 0, 
-                    "403": 0, "404": 0, "405": 0, "500": 0}
+    statCount = {"200": 0, "301": 0, "400": 0, "401": 0,
+                "403": 0, "404": 0, "405": 0, "500": 0}
 
     def parseIt(statCount, fileSize):
         print("File size: {}".format(fileSize))
@@ -33,7 +33,7 @@ if __name__ == "__main__":
             if c % 10 == 0:
                 parseIt(statCount, fileSize)
 
-        else: 
+        else:
             parseIt(statCount, fileSize)
 
     except (KeyboardInterrupt, SystemExit):

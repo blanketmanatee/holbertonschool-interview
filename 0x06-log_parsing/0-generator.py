@@ -1,38 +1,15 @@
 #!/usr/bin/python3
+import random
 import sys
-import signal
+from time import sleep
+import datetime
 
-""" reads stdin by line and checks status codes """
-
-if __name__ =="__main__":
-
-    c = filesize = 0
-    status = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
-
-    def handleten (status, filesize):
-        print("File size: {}:".format(filesize))
-        for key in sorted(status.keys()):
-            if status[key] == 0:
-                continue
-            print("{}: {}".format(key, status[key]))
-
-    try:
-        for line in sys.stdin:
-            c+=1
-            split = line.split(" ")
-            try:
-                boop = split[-2]
-                filesize += int(split[-1])
-
-                if boop in status:
-                    status[boop] += 1
-            except Exception:
-                pass
-
-            if c % 10 == 0:
-                handleten(status, filesize)
-        else:
-            handleten(status, filesize)
-    except (keyboardinterrupt, systemexit):
-        handleten(status, filesize)
-        raise
+for i in range(10000):
+    sleep(random.random())
+    sys.stdout.write("{:d}.{:d}.{:d}.{:d} - [{}] \"GET /projects/260 HTTP/1.1\" {} {}\n".format(
+        random.randint(1, 255), random.randint(1, 255), random.randint(1, 255), random.randint(1, 255),
+        datetime.datetime.now(),
+        random.choice([200, 301, 400, 401, 403, 404, 405, 500]),
+        random.randint(1, 1024)
+    ))
+    sys.stdout.flush()

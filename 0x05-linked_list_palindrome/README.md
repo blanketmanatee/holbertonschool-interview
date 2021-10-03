@@ -1,0 +1,1 @@
+Is the linked list a palindrome

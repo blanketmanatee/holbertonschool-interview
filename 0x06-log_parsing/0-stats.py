@@ -6,36 +6,38 @@ if __name__ == "__main__":
     import sys
     import signal
 
-    c = fileSize = 0
+    file_size = [0]
+    count = 1
     statCount = {"200": 0, "301": 0, "400": 0, "401": 0,
                  "403": 0, "404": 0, "405": 0, "500": 0}
 
-    def parseIt(statCount, fileSize):
-        print("File size: {}".format(fileSize))
+    def parseIt():
+        print("File size: {}".format(file_size[0]))
         for key in sorted(statCount.keys()):
-            if statCount[key] == 0:
-                continue
-            print("{}: {}".format(key, statCount[key]))
+            if statCount[key] != 0:
+                print("{}: {}".format(key, statCount[key]))
+
+    def stdin_parse(line):
+        """
+        checks stdin
+        """
+        try:
+            line = line[:-1]
+            word = line.split(' ')
+            file_size[0] += int(word[-1])
+            status_code = int(word[-2])
+            if status_code in status_codes:
+                status_codes[status_code] += 1
+        except BaseException:
+            pass
 
     try:
         for line in sys.stdin:
-            c += 1
-            split = line.split(" ")
-            try:
-                status = spli[-2]
-                fileSize += int(split[-1])
-
-                if status in statCount:
-                    statCount[status] += 1
-            except Exception:
-                pass
-
-            if c % 10 == 0:
-                parseIt(statCount, fileSize)
-
-        else:
-            parseIt(statCount, fileSize)
-
-    except (KeyboardInterrupt, SystemExit):
-        parseIt(statCount, fileSize)
+            stdin_parse(line)
+            if count % 10 == 0:
+                parseIt()
+            count += 1
+    except KeyboardInterrupt:
+        parseIt()
         raise
+    parseIt()

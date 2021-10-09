@@ -28,7 +28,7 @@ return (node);
 }
 
 /**
- * size - function to find size of the tree
+ * tree_size - function to find size of the tree
  * @tree: tree
  * Return: size of tree
  */
@@ -56,7 +56,7 @@ return (size);
  * @tree: ptr
  * @value: value of the node
  * @index: index of the node
- * @lead: node array position
+ * @leaf: node array position
  * Return: node inserted
  */
 

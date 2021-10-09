@@ -10,7 +10,7 @@ int x, y;
 
 printf("=\n");
 for (x = 0; x < 3; x++)
- {
+{
 for (y = 0; y < 3; y++)
 {
 if (y)
@@ -18,7 +18,7 @@ printf(" ");
 printf("%d", grid[x][y]);
 }
 printf("\n");
- }
+}
 }
 
 /**
@@ -128,5 +128,5 @@ loop_unstable(grid1);
 }
 else
 loop_unstable(grid1);
-    
+
 }

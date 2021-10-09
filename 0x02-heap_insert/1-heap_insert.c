@@ -24,7 +24,7 @@ node->parent->n = value;
 node = node->parent;
 }
 
-return(node);
+return (node);
 }
 
 /**
@@ -73,7 +73,7 @@ if (index + 1 == leaf / 2)
 if (leaf & 1)
 {
 tree->right = binary_tree_node(tree, value);
-return(tree->right);
+return (tree->right);
 }
 else
 {

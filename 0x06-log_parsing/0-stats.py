@@ -1,51 +1,45 @@
 #!/usr/bin/python3
 
-""" reads stdin and parses"""
+""" reads stdin and counts status codes """
 
-if __name__ == "__main__":
-    import sys
-    import signal
+import sys
 
-    file_size = [0]
-    codes = [200, 301, 400, 401, 403, 404, 405, 500]
-    count = 0
-    size = 0
-    statCount = {'200': 0, '301': 0, '400': 0, '401': 0,
-                 '403': 0, '404': 0, '405': 0, '500': 0}
 
-    try: 
-        for ln in sys.stdin:
-            if count == 10:
-                print("File size: {}".format(file_size))
-            for key in sorted(statCount):
-                print("{}: {}".format(key, statCount[key]))
-            count = 1
-        else: count += 1
+def printstats(dict, file_size):
+    """ Prints """
+    print("File size: {:d}".format(file_size))
+    for i in sorted(dict.keys()):
+        if dict[i] != 0:
+            print("{}: {:d}".format(i, dict[i]))
 
-        ln = ln.split()
+
+status = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0,
+       "404": 0, "405": 0, "500": 0}
+
+count = 0
+file_size = 0
+
+try:
+    for line in sys.stdin:
+        if count != 0 and count % 10 == 0:
+            printstats(status, file_size)
+
+        statlist = line.split()
+        count += 1
 
         try:
-            size = size + int(ln[-1])
-        except (IndexError, ValueError):
+            file_size += int(statlist[-1])
+        except:
             pass
 
         try:
-            if ln[-2] in statCount:
-                if codes.get(ln[-2], -1) == -1:
-                    codes[ln[-2]] = 1
-                else:
-                    codes[ln[-2]] += 1
-        except IndexError:
+            if statlist[-2] in status:
+                status[statlist[-2]] += 1
+        except:
             pass
-
-        print("File size: {}".format(file_size))
-        for key in sorted(codes):
-            print("{}: {}".format(key, codes[key]))
+    printstats(status, file_size)
 
 
-    
-    except KeyboardInterrupt:
-        print("File size:{}".format(file_size))
-        for key in sorted(statCount):
-            print("{}: {}".format(key, statCount[key]))
-        raise
+except KeyboardInterrupt:
+    printstats(status, file_size)
+    raise

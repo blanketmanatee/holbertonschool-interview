@@ -37,6 +37,6 @@ void menger(int level) {
             }
             printf("%c", shape);
         }
-        printf("/n");
+        printf("\n");
     }
 }

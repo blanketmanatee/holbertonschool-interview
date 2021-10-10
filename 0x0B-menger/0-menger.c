@@ -5,7 +5,7 @@
  * @level: level of sponge to draw
  */
 
-void menger(int level) 
+void menger(int level)
 {
 int i, j, x, y, result;
 char shape;

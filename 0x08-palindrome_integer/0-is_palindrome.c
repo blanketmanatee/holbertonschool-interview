@@ -8,15 +8,15 @@
 
 int is_palindrome(unsigned long n)
 {
-    unsigned long reverse_num=0, rem;
+    unsigned long reverse_num = 0, rem, original = n;
 
 
-    while (n !=0){
-        rem = n%10;
-        reverse_num = reverse_num*10+rem;
-        is_palindrome(n/10);
+    while (original != 0) {
+        rem = original % 10;
+        reverse_num = reverse_num * 10 + rem;
+        original /= 10;
     }
-    if (n == rem)
+    if (original == rem)
         return (1);
     else
         return (0);

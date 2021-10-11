@@ -5,5 +5,7 @@
 #include <stdlib.h>
 
 int is_palindrome(unsigned long n);
+int _strlen_recursion(char *s);
+
 
 #endif /* PALINDROME_H */

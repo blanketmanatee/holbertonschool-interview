@@ -8,16 +8,15 @@
 
 int is_palindrome(unsigned long n)
 {
-    unsigned long reverse_num = 0, rem, original = n;
+    unsigned long reverse_num = 0, temp = 0, copy = n;
 
 
-    while (original != 0) {
-        rem = original % 10;
-        reverse_num = reverse_num * 10 + rem;
-        original /= 10;
+    while (n != 0) {
+        temp = n % 10;
+        reverse_num = reverse_num * 10 + temp;
+        n /= 10;
     }
-    if (original == rem)
+    if (copy == reverse_num)
         return (1);
-    else
-        return (0);
+    return (0);
 }

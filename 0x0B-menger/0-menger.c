@@ -17,7 +17,7 @@ return;
 
 if (level == 0)
 {
-printf("#");
+printf("#\n");
 return;
 }
 

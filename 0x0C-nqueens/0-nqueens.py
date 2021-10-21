@@ -5,6 +5,9 @@ Solving N Queens problem
 import sys
 
 def print_board(board):
+    """
+    the board
+    """
     new_lst = []
     for i, row in enumerate(board):
         value = []
@@ -16,6 +19,9 @@ def print_board(board):
     print (new_lst)
 
 def isSafe(board, row, col, number):
+    """
+    safe moves
+    """
     for i in range(col):
         if board[row][i] == 1:
             return False
@@ -30,6 +36,9 @@ def isSafe(board, row, col, number):
     return True
 
 def solveNQUtil(board, col, number):
+    """
+    chess 
+    """
     if (col == number):
         print_board(board)
         return True
@@ -42,12 +51,18 @@ def solveNQUtil(board, col, number):
     return res
 
 def solve(number):
+    """
+    solve it
+    """
     board = [[0 for i in range(number)] for i in range(number)]
     if not solveNQUtil(board, 0, number):
         return False
     return True
 
 def validate(args):
+    """
+    validate
+    """
     if (len(args) == 2):
         try:
             number = int(args[1])

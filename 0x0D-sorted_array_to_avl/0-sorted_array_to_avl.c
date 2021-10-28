@@ -9,7 +9,7 @@
 
 avl_t *new_node(int value, avl_t *parent)
 {
-    avl_t *new = mallow(sizeof(avl_t));
+    avl_t *new = malloc(sizeof(avl_t));
 
     if (!new)
         return (NULL);
@@ -55,7 +55,7 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 {
     avl_t *root = NULL;
     int left = 0;
-    int r = size - 1;
+    int right = size - 1;
 
     root = new_tree(root, array, left, right);
     if (!root)

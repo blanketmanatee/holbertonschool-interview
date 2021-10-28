@@ -39,8 +39,8 @@ avl_t *new_tree(avl_t *parent, int *array, int left, int right)
     new = new_node(array[m], parent);
     if (!new)
         return (NULL);
-    new->left = new_tree(new, array, left, m - 1)
-    new->right = new_tree(new, array, m + 1, r)
+    new->left = new_tree(new, array, left, m - 1);
+    new->right = new_tree(new, array, m + 1, right);
     return (new);
 }
 

@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = 'https://swapi-api.htbn.io/api/films/'.concat(process.argv[2]);
+const url = 'https://swapi-api.htbn.io/api/people/'.concat(process.argv[2]);
 
 request(url, function (err, res, body) {
   const characters = JSON.parse(body).characters;

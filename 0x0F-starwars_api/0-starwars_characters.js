@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const request = requre('request');
+const request = require('request');
 
 const movieId = process.argv[2] + '/';
 const url = 'https://swapi-api.htbn.io/api/films/';

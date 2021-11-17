@@ -3,18 +3,28 @@
 
 def rain(walls):
     """fill the rain barrels"""
-    arr = [];
-    res = 0;
+    size = len(walls)
+    if size == 0 or size == 1 or size == 2:
+        return 0
 
-    for i in range(1, walls - 1):
-
-        left = arr[i];
-        for j in range (i) :
-            left = max(left, arr[j]);
-
-        right = arr[i];
-
-        for j in range(i + 1, walls):
-            right = max(right, arr[j]);
-        res = res + (min(left, right) - arr[i]);
-    return res;
+    rain = 0
+    while size >= 3:
+        w = walls.copy()
+        w.sort()
+        top = w[-1]
+        top2 = w [-2]
+        x = walls.index(top)
+        y = walls.index(top2)
+        if x == y:
+            y = walls.index(top2, y1+1)
+        idx = [x, y]
+        idx.sort()
+        limit = min([walls[idx[0]]], walls[idx[1]])
+        for i in range(idx[0] + 1, idex[1]):
+            rain += limit - walls[i]
+        for i in range(idx[0], idx [1]+1):
+            del walls[idx[0]]
+        walls.insert(idx[0], limit)
+        res = len(walls)
+    return rain
+        

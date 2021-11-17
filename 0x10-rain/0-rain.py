@@ -16,11 +16,11 @@ def rain(walls):
         x = walls.index(top)
         y = walls.index(top2)
         if x == y:
-            y = walls.index(top2, y1+1)
+            y = walls.index(top2, y + 1)
         idx = [x, y]
         idx.sort()
         limit = min([walls[idx[0]]], walls[idx[1]])
-        for i in range(idx[0] + 1, idex[1]):
+        for i in range(idx[0] + 1, idx[1]):
             rain += limit - walls[i]
         for i in range(idx[0], idx [1]+1):
             del walls[idx[0]]

@@ -1,7 +1,8 @@
-#!/usr/bin/python3
-
+#!/usr/bin/env python3.7
+"""Rain barrels"""
 
 def rain(walls):
+    """fill the rain barrels"""
     arr = [];
     res = 0;
 

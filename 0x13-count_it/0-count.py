@@ -36,10 +36,10 @@ def count_words(subreddit, word_list, after="", word_dic={}):
 
     try:
         js = r.json()
-    
+
     except ValueError:
         return None
-    
+
     try:
         data = js.get('data')
         after = data.get('after')

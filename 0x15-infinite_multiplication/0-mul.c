@@ -19,7 +19,7 @@ return (1);
 }
 
 /**
- * _strlen - find len of str 
+ * _strlen - find len of str
  * @s: str
  * Return: len of str
  */
@@ -59,7 +59,7 @@ len_b = tmp;
 for (len_b--; len_b >= 0; len_b--)
 {
 b_num = b[len_b] - '0';
-res += ptr[len_b + len_a + 1] + (a_num * b_num);
+res += ptr[len_b + len_a + 1] + (a_num *b_num);
 ptr [len_a + len_b  + 1] = res % 10;
 res /= 10;
 }

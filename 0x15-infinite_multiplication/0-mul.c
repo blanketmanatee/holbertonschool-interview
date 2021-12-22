@@ -8,14 +8,14 @@
 
 int is_digit(char *x)
 {
-    while (*x)
-    {
-        if (*x < '0' || *x > '9')
-        return (0);
+while (*x)
+{
+if (*x < '0' || *x > '9')
+return (0);
 
-        x++;
-    }
-    return (1);
+x++;
+}
+return (1);
 }
 
 /**
@@ -26,11 +26,11 @@ int is_digit(char *x)
 
 int _strlen(char *s)
 {
-    char *ptr = s;
+char *ptr = s;
 
-    while (*s)
-    s++;
-    return (s - ptr);
+while (*s)
+s++;
+return (s - ptr);
 }
 
 /**
@@ -41,39 +41,39 @@ int _strlen(char *s)
 
 void multiply(char *a, char *b)
 {
-    int i, len_a, len_b, total, a_num, b_num, res = 0, tmp;
-    int *ptr;
+int i, len_a, len_b, total, a_num, b_num, res = 0, tmp;
+int *ptr;
 
-    len_a = _strlen(a);
-    len_b = _strlen(b);
-    tmp = len_b;
-    total = len_a + len_b;
-    ptr = malloc(sizeof(int) * total);
-    if (!ptr)
-    return;
-    for (len_a--; len_a >= 0; len_a--)
-    {
-        a_num = a[len_a] - '0';
-        res = 0;
-        len_b = tmp;
-        for (len_b--; len_b >= 0; len_b--)
-        {
-            b_num = b[len_b] - '0';
-            res += ptr[len_b + len_a + 1] + (a_num * b_num);
-            ptr [len_a + len_b  + 1] = res % 10;
-            res /= 10;
-        }
-        if (res)
-        ptr[len_a + len_b + 1] = res % 10;
-    }
-    while (*ptr == 0)
-    {
-        ptr++;
-        total--;
-    }
-    for (i = 0; i < total; i++)
-    printf("%i", ptr[i]);
-    printf("\n");
+len_a = _strlen(a);
+len_b = _strlen(b);
+tmp = len_b;
+total = len_a + len_b;
+ptr = malloc(sizeof(int) * total);
+if (!ptr)
+return;
+for (len_a--; len_a >= 0; len_a--)
+{
+a_num = a[len_a] - '0';
+res = 0;
+len_b = tmp;
+for (len_b--; len_b >= 0; len_b--)
+{
+b_num = b[len_b] - '0';
+res += ptr[len_b + len_a + 1] + (a_num * b_num);
+ptr [len_a + len_b  + 1] = res % 10;
+res /= 10;
+}
+if (res)
+ptr[len_a + len_b + 1] = res % 10;
+}
+while (*ptr == 0)
+{
+ptr++;
+total--;
+}
+for (i = 0; i < total; i++)
+printf("%i", ptr[i]);
+printf("\n");
 }
 
 /**

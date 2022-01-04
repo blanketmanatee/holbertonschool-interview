@@ -4,7 +4,7 @@ const request = require('request');
 const filmId = process.argv[2];
 const url = 'https://swapi-api.htbn.io/api/films/${filmId}';
 
-request(url, async (err, res, body) {
+request(url, async (err, res, body) =>
   if (err) {
     console.log(err);
   }

@@ -5,8 +5,8 @@ const filmId = process.argv[2];
 const url = 'https://swapi-api.htbn.io/api/films/${filmId}';
 
 request(url, async (err, res, body) =>
-  if (err) {
-    console.log(err);
+  { (err) =>
+        console.log(err);
   }
   for (const characters = JSON.parse(body).characters){
     await new Promise((resolve, reject) => {

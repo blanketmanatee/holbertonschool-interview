@@ -10,7 +10,7 @@ def rotate_2d_matrix(matrix):
         N1 = N - 1
         for y in range(x, N1 - x):
             temp = matrix[x][y]
-            matrix[x][y] = matrix[N1 - y]
+            matrix[x][y] = matrix[N1 - y][x]
             matrix[N1 - y][x] = matrix[N1 - x][N1 - y]
             matrix[N1 - x][N1 - y] = matrix[y][N1 - x]
             matrix[y][N1 - x] = temp

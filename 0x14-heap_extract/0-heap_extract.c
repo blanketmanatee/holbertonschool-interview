@@ -8,19 +8,19 @@
  * @lvl: layer in tree
  */
 
-void binary_tree_preorder(heap_t *tree, heap_t **node, size_t height, size_t lvl)
+void binary_tree_preorder(heap_t *tree, heap_t **node, size_t ht, size_t lvl)
 {
 if (!tree)
 return;
-if (height == lvl)
+if (ht == lvl)
 *node = tree;
 
 lvl++;
 
 if (tree->left)
-binary_tree_preorder(tree->left, node, height, lvl);
+binary_tree_preorder(tree->left, node, ht, lvl);
 if (tree->right)
-binary_tree_preorder(tree->right, node, height, lvl);
+binary_tree_preorder(tree->right, node, ht, lvl);
 }
 
 /**
@@ -34,7 +34,7 @@ size_t binary_tree_height(const heap_t *tree)
 size_t left, right;
 
 if (!tree)
-return(0);
+return (0);
 if (!tree->left && !tree->right)
 return (0);
 right = binary_tree_height(tree->right) + 1;
@@ -57,14 +57,14 @@ size_t lvl = 0;
 heap_t *aux, *node;
 
 if (!root || !*root)
-return(0);
+return (0);
 aux = *root;
 value = aux->n;
 if (!aux->left && !aux->right)
 {
 *root = NULL;
 free(aux);
-return(value);
+return (value);
 }
 binary_tree_preorder(aux, &node, binary_tree_height(aux), lvl);
 while (aux->left || aux->right)

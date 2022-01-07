@@ -26,7 +26,7 @@ while (node->next)
 node = node->next;
 break;
 }
-printf("Value checked at index [%lu] and [%d]\n", node->index, node->n);
+printf("Value checked at index [%lu] = [%d]\n", node->index, node->n);
 }
 printf("Value found between indexes [%lu] and [%lu]\n", list->index,
 node->index);

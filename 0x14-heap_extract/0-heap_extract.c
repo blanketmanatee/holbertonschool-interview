@@ -48,6 +48,7 @@ return (right);
 /**
  * heap_extract - extrat root node from max binary heap
  * @root: ptr to root node
+ * Return: value of root node or 0
  */
 
 int heap_extract(heap_t **root)

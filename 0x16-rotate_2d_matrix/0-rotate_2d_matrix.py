@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def rotate_2d_matrix(matrix):
     for x in range(0, int(N / 2)):
         for y in range(x, N-x-1):

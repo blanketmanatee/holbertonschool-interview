@@ -17,7 +17,7 @@ if (height == lvl)
 
 lvl++;
 
-if (tree->lvl)
+if (tree->left)
 binary_tree_preorder(tree->left, node, height, lvl);
 if (tree->right)
 binary_tree_preorder(tree->right, node, height, lvl);

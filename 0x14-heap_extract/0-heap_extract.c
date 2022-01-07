@@ -4,7 +4,7 @@
  * binary_tree_preorder - Recursively go through binary tree
  * @tree: ptr to root
  * @node: ptr to node
- * @height: height of tree
+ * @ht: height of tree
  * @lvl: layer in tree
  */
 

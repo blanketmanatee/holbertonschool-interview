@@ -28,7 +28,7 @@ break;
 }
 printf("Value checked at index [%lu] and [%d]\n", node->index, node->n);
 }
-printf("Value found between indexes[%lu] and [%lu]\n", list->index,
+printf("Value found between indexes [%lu] and [%lu]\n", list->index,
 node->index);
 for (; list && node->n >= list->n; list = list->next)
 {

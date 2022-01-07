@@ -32,7 +32,7 @@ printf("Value found between indexes [%lu] and [%lu]\n", list->index,
 node->index);
 for (; list && node->n >= list->n; list = list->next)
 {
-printf("value checked at index [%lu] = [%d]\n", list->index, list->n);
+printf("Value checked at index [%lu] = [%d]\n", list->index, list->n);
 if (list->n == value)
 return (list);
 }

@@ -14,7 +14,7 @@ if (!list)
 return (NULL);
 
 node = list->express;
-printf("Value checked at inde[%lu] = [%d]\n", node->index, node->n);
+printf("Value checked at index [%lu] = [%d]\n", node->index, node->n);
 while (node && node->n < value)
 {
 list = node;

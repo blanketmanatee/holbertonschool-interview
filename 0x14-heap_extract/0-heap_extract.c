@@ -8,7 +8,7 @@
  * @lvl: layer in tree
  */
 
-void binary_tree_preorder(heap_t *tree, heap_t **node, size_t h, size_t lvl)
+void binary_tree_preorder(heap_t *tree, heap_t **node, size_t height, size_t lvl)
 {
 if (!tree)
 return;

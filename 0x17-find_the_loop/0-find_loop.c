@@ -12,7 +12,7 @@ listint_t *j = head;
 
 if (!head)
 return (NULL);
-while(i->next && j->next->next)
+while (i->next && j->next->next)
 {
 i = i->next;
 j = j->next->next;

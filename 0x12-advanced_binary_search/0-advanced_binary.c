@@ -59,5 +59,5 @@ return ((int)(half));
 if (array[first] == value)
 return (first);
 print_array(array, (int)first, (int)last);
-return(-1);
+return (-1);
 }

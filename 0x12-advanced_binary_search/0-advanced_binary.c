@@ -18,7 +18,7 @@ printf("\n");
 }
 
 /**
- * advanced binary - advanced binary
+ * advanced_binary - advanced binary function
  * @array: array
  * @size: size
  * @value: value

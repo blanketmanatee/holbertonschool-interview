@@ -22,6 +22,7 @@ printf("\n");
  * @array: array
  * @size: size
  * @value: value
+ * Return: int
  */
 int advanced_binary(int *array, size_t size, int value)
 {
@@ -41,6 +42,7 @@ return (recursive_search(array, first, last, value));
  * @first: ifirst
  * @last: last
  * @value: value
+ * Return: int
  */
 int recursive_search(int *array, size_t first, size_t last, int value)
 {

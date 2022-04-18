@@ -16,7 +16,7 @@ def island_perimeter(grid):
 
             idx = [(i - 1, j), (i, j - 1), (i, j + 1), (i + 1, j)]
             check = [1 if k[0] in range(row) and k[1] in range(col) else 0
-                      for k in idx]
+                    for k in idx]
             if grid[i][j]:
                 count += sum([1 if not r or not grid[k[0]][k[1]] else 0
                               for r, k in zip(check, idx)])
